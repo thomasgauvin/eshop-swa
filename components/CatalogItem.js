@@ -9,10 +9,12 @@ var formatter = new Intl.NumberFormat('en-US', {
     //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
   });
 
+var isDev = process.env.NODE_ENV == "development"
+
 export default function CatalogItem({ CatalogItem }) {
   return (
     <div style={{width: "16rem", height: "18rem", padding: "1em"}}>
-        <img src={"http://localhost:4000" + CatalogItem.pictureUri} height={"100%"} width={"100%"}></img>
+        <img src={isDev? "http://localhost:4000/" + CatalogItem.pictureUri : "https://eshop-swa.azure-api.net/" + CatalogItem.pictureUri} height={"100%"} width={"100%"}></img>
         <div style={{display: "flex", justifyContent: "space-between"}}>
             <div>{CatalogItem.name}</div>
             <div>{formatter.format(CatalogItem.price)}</div>
