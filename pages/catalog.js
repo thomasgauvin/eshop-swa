@@ -26,10 +26,10 @@ export default function Home(props) {
                 Showing 8 of 24 products - Page 1
             </div>
         <div className={`${styles["item-container"]} ${styles["container"]}`}>
-            { items &&
-
+            { !items ? 
                 <div>Loading...</div> 
                 :
+                items.map((item) => <CatalogItem CatalogItem={item} key={item.id}/>)
             }
         </div>
         </div>
