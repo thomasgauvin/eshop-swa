@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import { useEffect, useState } from 'react';
 import CatalogItem from '../components/CatalogItem';
 
-export default function Home(props) {
+export default function Catalog(props) {
 
     const [items, setItems] = useState([]);
 
