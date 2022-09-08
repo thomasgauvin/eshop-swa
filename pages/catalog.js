@@ -6,12 +6,14 @@ import CatalogItem from '../components/CatalogItem';
 
 var isDev = process.env.NODE_ENV == "development"
 
+
+
 export default function Catalog(props) {
 
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        if(isDev){
+        if(!isDev){
             fetch('https://eshop-swa.azure-api.net/api/v1/Catalog/items')
                 .then((res) => res.json())
                 .then((data) => {
@@ -22,7 +24,7 @@ export default function Catalog(props) {
                 })
         }
         else{
-            fetch(isDev ? 'http://localhost:4000/api/v1/Catalog/items' : 'https://eshop-swa.azure-api.net/api/v1/Catalog/items')
+            fetch('http://localhost:4000/api/v1/Catalog/items')
                 .then((res) => res.json())
                 .then((data) => {
                     setItems(data);
