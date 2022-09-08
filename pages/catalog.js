@@ -14,7 +14,7 @@ export default function Catalog(props) {
 
     useEffect(() => {
         if(!isDev){
-            fetch('/api/v1/Catalog/items')
+            fetch('https://eshop-swa.azure-api.net/api/v1/Catalog/items')
                 .then((res) => res.json())
                 .then((data) => {
                     setItems(data);
