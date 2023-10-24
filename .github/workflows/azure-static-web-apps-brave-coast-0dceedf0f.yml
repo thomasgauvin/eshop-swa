@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - sale-b-test
+      - sale-c-test
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
