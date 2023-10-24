@@ -4,36 +4,20 @@ import Layout from "../components/Layout";
 import { useEffect, useState } from 'react';
 import CatalogItem from '../components/CatalogItem';
 
-var isDev = process.env.NODE_ENV == "development"
-
-
 
 export default function Catalog(props) {
 
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        if(!isDev){
-            fetch('https://eshop-swa.azure-api.net/api/v1/Catalog/items')
-                .then((res) => res.json())
-                .then((data) => {
-                    setItems(data);
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
-        }
-        else{
-            fetch('http://localhost:4000/api/v1/Catalog/items')
-                .then((res) => res.json())
-                .then((data) => {
-                    setItems(data);
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
-        }
-
+        fetch('/api/v1/Catalog/items')
+        .then((res) => res.json())
+        .then((data) => {
+            setItems(data);
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     }, [])
 
   return (
