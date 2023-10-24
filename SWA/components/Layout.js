@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import styles from "../styles/Catalog.module.scss";
 
 export default function Layout({children}) {
