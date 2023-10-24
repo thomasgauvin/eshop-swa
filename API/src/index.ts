@@ -43,7 +43,7 @@ app.use(cors());
 
 app.use(router);
 
-app.use('/public', express.static(path.join(__dirname, '../public')));
+app.use('/api/public', express.static(path.join(__dirname, '../public')));
 
 app.get('/', (req, res) => {
   res.send('Hello World 2!')

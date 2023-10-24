@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/f28a81b5-8db1-46f7-a442-43662f51027b/resourceGroups/eshop-swa/providers/Microsoft.Web/sites/eshop-swa-api",
+    "appService.deploySubpath": "API"
+}
